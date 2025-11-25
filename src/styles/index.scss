@@ -1,0 +1,63 @@
+@import "./reset.scss";
+
+/* 全局字体 */
+/* src/assets/styles/global.scss */
+html, body {
+  font-family: "Microsoft YaHei", "Segoe UI", "PingFang SC", sans-serif;
+  color: #333; /* 可统一全局文字颜色 */
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* 覆盖 Element Plus 默认字体 */
+:root {
+  --el-font-family: "Microsoft YaHei", "Segoe UI", "PingFang SC", sans-serif;
+}
+
+/* nprogress 容器 */
+#nprogress {
+  pointer-events: none;
+}
+
+/* 进度条 */
+#nprogress .bar {
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(
+                  90deg,
+                  red,
+                  orange,
+                  yellow,
+                  green,
+                  blue,
+                  indigo,
+                  violet
+  ) !important; /* ✅ 强制覆盖默认蓝色 */
+  background-size: 200% 100%;
+  animation: nprogress-color 2s linear infinite;
+}
+
+
+/* 动态滚动动画 */
+@keyframes nprogress-color {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* 去掉右侧 spinner */
+#nprogress .spinner {
+  display: none;
+}
+
+/* 光晕效果 */
+#nprogress .peg {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  opacity: 1;
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
